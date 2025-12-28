@@ -36,10 +36,15 @@ $$
 - Same thing can be achieved using least squared method with equation
   
 $$
-R_{1}= h + \sum_{i=2}^{n} h_{i}R_{i} + \epsilon^{\prime}
+R_{1}= h_{0} + \sum_{i=2}^{n} h_{i}R_{i} + \epsilon^{\prime}
 $$
 
 - In above equation $h_{0}$ is an constant and $\epsilon^{\prime}$ is an error term.
 - This kind of hedging ratio would be varying with time as the dependent variables are time dependent, hence the time -independent would follow for a very short period of time in real life.
 - The dependent variables are chosen from stock data in the code randomly, and usually chosen observing the correlation (preferablly negative correlation between stocks) for combined trading in XS stategy building.
   
+## Time-deependent Hedging
+- For time varying process variance formula would be calculated with differnet time stamps(t), where
+  $$
+\vec{h_{t}}_{optimal}= Var(R^{\prime}_{t})^{-1}Cov(R_{1_{t}},R^{\prime}_{t})
+$$
