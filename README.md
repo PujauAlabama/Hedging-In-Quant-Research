@@ -43,7 +43,7 @@ $$
 - This kind of hedging ratio would be varying with time as the dependent variables are time dependent, hence the time -independent would follow for a very short period of time in real life.
 - The dependent variables are chosen from stock data in the code randomly, and usually chosen observing the correlation (preferablly negative correlation between stocks) for combined trading in XS stategy building.
   
-## Time-deependent Hedging
+## Time-dependent Hedging
 - For time varying process variance formula would be calculated with differnet time stamps(t), where-
   
 $$
