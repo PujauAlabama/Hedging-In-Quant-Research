@@ -45,6 +45,7 @@ $$
   
 ## Time-deependent Hedging
 - For time varying process variance formula would be calculated with differnet time stamps(t), where-
+  
 $$
 \vec{h_{t}}_{optimal}= Var(R^{\prime}_{t})^{-1}Cov(R_{1_{t}},R^{\prime}_{t})
 $$
