@@ -44,7 +44,7 @@ $$
 - The dependent variables are chosen from stock data in the code randomly, and usually chosen observing the correlation (preferablly negative correlation between stocks) for combined trading in XS stategy building.
   
 ## Time-deependent Hedging
-- For time varying process variance formula would be calculated with differnet time stamps(t), where
+- For time varying process variance formula would be calculated with differnet time stamps(t), where-
 $$
 \vec{h_{t}}_{optimal}= Var(R^{\prime}_{t})^{-1}Cov(R_{1_{t}},R^{\prime}_{t})
 $$
