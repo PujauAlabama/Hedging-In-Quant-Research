@@ -58,5 +58,10 @@ $$
 $$
 \epsilon_{t} = z_{t} \sigma_{t}
 $$
-
+$$
+\sigma_{t}^{2}=\alpha_{0} + \sum_{i=1}^{p} \alpha_{i} \epsilon_{t-i} + \sum_{j=1}^{q} \beta_{j} \sigma_{t-j}^{2}
+$$
+- where, t $= 0,1,2,...,T$
+- $y_{t}$ and $\mu_{t}$ are the obeservable and the it's mean respectively at time t 
+  
 
