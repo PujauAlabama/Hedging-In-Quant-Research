@@ -49,3 +49,14 @@ $$
 $$
 \vec{h_{t}}_{optimal}= Var(R^{\prime}_{t})^{-1}Cov(R_{1_{t}},R^{\prime}_{t})
 $$
+### Hedging Using GARCH model
+-GARCH(p,q) can expresses as a stochastic process obeying following:
+  
+$$
+y_{t}= \mu_{t} + \epsilon_{t} 
+$$
+$$
+\epsilon_{t} = z_{t} \sigma_{t}
+$$
+
+
