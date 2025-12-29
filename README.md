@@ -75,4 +75,9 @@ $$
 H_{(i,j)_{t}} = Cov(R_{i_{t}},R_{j_{t}}) = \sigma_{(i,j)_{t}}^{2} = \rho_{(i,j)_{t}} \sigma_{i_{t}} \sigma_{j_{t}}
 $$
 
+-First univariate ugarchspec model is used to find out individual variances of each time series.
+## How it works
 
+```python
+mean.model = list(armaOrder = c(0, 0))
+```
