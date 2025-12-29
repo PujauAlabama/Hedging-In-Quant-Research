@@ -75,9 +75,11 @@ $$
 H_{(i,j)_{t}} = Cov(R_{i_{t}},R_{j_{t}}) = \sigma_{(i,j)_{t}}^{2} = \rho_{(i,j)_{t}} \sigma_{i_{t}} \sigma_{j_{t}}
 $$
 
--First univariate ugarchspec model is used to find out individual variances of each time series.
-## How it works
+-First univariate ugarchspec model is used to find out individual variances of each time series considering no lag, i.e. ARMA(0,0) . Variance is calculated using sGARCH (standard GARCH), which considers all postive and negative shocks same way. distribution.model = "norm" incorporates the fact $z_{t} \approx N(0,1) $
 
 ```python
 mean.model = list(armaOrder = c(0, 0))
+variance.model = list(model = "sGARCH", garchOrder = c(p, q))
+distribution.model = "norm"
 ```
+-
