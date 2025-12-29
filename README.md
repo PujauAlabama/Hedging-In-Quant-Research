@@ -66,6 +66,11 @@ $$
 - For time depedent return $\vec{X_{t}}= (R_{1_{t}},R_{2_{t}},...., R_{n_{t}})^{T}$ in n stock portfolio, if $D_{t}= diag(\sigma_{1_{t}}^{2},\sigma_{2_{t}}^{2},...., \sigma_{n_{t}}^{2})$ be covariance matrix for indivual assets (with diagonal entry i,i being the variance of i'th asset), we can express the time dependent variance-convariance matrix
 
 $$
-H_{t} = D_{t} R_{t} D_{t}
+H_{t} = Cov(\vec{X_{t}) = D_{t} R_{t} D_{t}
 $$
+-In matrix notation,
+$$
+H_{(i,j)_{t}} = Cov(R_{i_{t}},R_{j_{t}}) = \sigma_{(i,j)_{t}}^{2} = \rho_{(i,j)_{t}} \sigma_{i_{t}} \sigma_{j_{t}}
+$$
+
 
