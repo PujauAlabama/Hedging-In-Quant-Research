@@ -70,6 +70,7 @@ H_{t} = Cov(\vec{X_{t}}) = D_{t} R_{t} D_{t}
 $$
 
 -In matrix notation,
+
 $$
 H_{(i,j)_{t}} = Cov(R_{i_{t}},R_{j_{t}}) = \sigma_{(i,j)_{t}}^{2} = \rho_{(i,j)_{t}} \sigma_{i_{t}} \sigma_{j_{t}}
 $$
