@@ -64,8 +64,8 @@ $$
 - where, t $= 0,1,2,...,T$
 - $y_{t}$ , $\mu_{t}$ and $\sigma_{t}$ are the obeservable and the it's mean and standard deviation respectively at time t and $z_{t}\approx N(0,1)$ are i.i.d's
 - For time depedent return $\vec{X_{t}}= (R_{1_{t}},R_{2_{t}},...., R_{n_{t}})^{T}$ in n stock portfolio, if $D_{t}= diag(\sigma_{1_{t}}^{2},\sigma_{2_{t}}^{2},...., \sigma_{n_{t}}^{2})$ be covariance matrix for indivual assets (with diagonal entry i,i being the variance of i'th asset), we can express the time dependent variance-convariance matrix
-- bhh
+
 $$
-\sigma_{t}^{2}=\alpha_{0} + \sum_{i=1}^{p} \alpha_{i} \epsilon_{t-i} + \sum_{j=1}^{q} \beta_{j} \sigma_{t-j}^{2}
+H_{t} = D_{t} R_{t} D_{t}
 $$
 
