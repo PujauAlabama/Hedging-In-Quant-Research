@@ -83,4 +83,12 @@ variance.model = list(model = "sGARCH", garchOrder = c(p, q))
 distribution.model = "norm"
 ```
 - Then this univariate model would be used to implement multivariate model using correlation matrix to find variance-covariance matrix.
+  ```python
+# Create a multivariate GARCH specification
+multispec <- multispec(replicate(ncol(log_returns), ugarch_spec))
+
+# Specify Dynamic Conditional Correlation (DCC-GARCH) model
+dcc_spec <- dccspec(uspec = multispec, dccOrder = c(1, 1), distribution = "mvnorm")  # Multivariate normal distribution
+
+```
 - 
