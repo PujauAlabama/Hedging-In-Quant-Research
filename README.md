@@ -92,8 +92,17 @@ dcc_spec <- dccspec(uspec = multispec, dccOrder = c(1, 1), distribution = "mvnor
 - Let us consider a stochastic process with
   
 $$
-y_{t}= \alpha + \beta t `{{ (\gamma + 1) }}`
+y_{t}= \alpha + \beta t +  (\gamma + 1)y_{t-1} + \sum_{t=2}^{n}{\delta_{2}y_{t-j}}
 $$
+
+which gives,
+
+$$
+y_{t}-y_{t-1} -  \beta t  = \alpha + \beta t +  \gamma y_{t-1} + \sum_{t=2}^{n}{\delta_{2}y_{t-j}}
+$$
+
+- This mimics the same one time differenced AR(p) process, which is stationary provided $\gamma =0 $ and is used in ADF test. 
+
 
 - This method uses co-integration (i.e. long term time invariant correlation of two time series data) method between two stocks, which is important for pair trading scenarios.
 - We can consider one target stock as $R_{Target}$ and hedged return as $R_{Hedged}$ and a residual term R
