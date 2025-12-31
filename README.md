@@ -89,7 +89,10 @@ multispec <- multispec(replicate(ncol(log_returns), ugarch_spec))
 dcc_spec <- dccspec(uspec = multispec, dccOrder = c(1, 1), distribution = "mvnorm")  # Multivariate normal distribution
 ```
 ### Hedging Using Augmented Dicky Fuller Test (ADF)
-- It uses the 
+- Let us consider a stochastic process with
+$$
+ y_{t}= \alpha + \beta t `{{ (\gamma + 1) }}`
+$$
 - This method uses co-integration (i.e. long term time invariant correlation of two time series data) method between two stocks, which is important for pair trading scenarios.
 - We can consider one target stock as $R_{Target}$ and hedged return as $R_{Hedged}$ and a residual term R
 $$
