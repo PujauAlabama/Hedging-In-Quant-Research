@@ -94,12 +94,14 @@ dcc_spec <- dccspec(uspec = multispec, dccOrder = c(1, 1), distribution = "mvnor
 $$
  y_{t}= \alpha + \beta t `{{ (\gamma + 1) }}`
 $$
+
 - This method uses co-integration (i.e. long term time invariant correlation of two time series data) method between two stocks, which is important for pair trading scenarios.
 - We can consider one target stock as $R_{Target}$ and hedged return as $R_{Hedged}$ and a residual term R
   
 $$
 R = R_{Target} -  \beta R_{Hedged}
 $$
+
 where $\beta$ is 
 ### Hedging Using The Johansen test (Co-integration analysis)
 -  Johansen test uses this cointegration method to figure out among a set of stocks, which ones among these combinedly gives stationary return for a long period of time. Though the stock time series data might be non-stationary individually, but thier combined portfolio would stay stationary. So while hedging that combination portfolio is considered which gives positive return throughout.
