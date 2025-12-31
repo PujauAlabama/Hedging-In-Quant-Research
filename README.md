@@ -111,7 +111,16 @@ $$
 R_{t} = R_{Target} -  \beta R_{Hedged}
 $$
 
-- Out target would be to figure out correct $\beta$ term to make $R_{t}$ stationary via ADF method.
+- Out target would be to figure out correct $\beta$ term to make $R_{t}$ stationary via ADF method. It can be found from hedge_ratio in code after linear regression fitting of R_{Target} and R_{Hedged}
+```python
+hedge_model <- lm(log(R_{Target}) ~ log(R_{Hedged})
+summary(hedge_model)
+```python
+- The co-integration can be interprated using p-value, which should be less than .05. Here residual_hedge is $R_{t}$
+```python
+adf_residuals <- ur.df(residuals_hedge, type = "none", selectlags = "AIC")
+summary(adf_residuals)
+```python
    
 ### Hedging Using The Johansen test (Co-integration analysis)
 -  Johansen test uses this cointegration method to figure out among a set of stocks, which ones among these combinedly gives stationary return for a long period of time. Though the stock time series data might be non-stationary individually, but thier combined portfolio would stay stationary. So while hedging that combination portfolio is considered which gives positive return throughout.
