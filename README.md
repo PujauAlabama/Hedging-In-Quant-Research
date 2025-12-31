@@ -111,12 +111,15 @@ $$
 R_{t} = R_{Target} -  \beta R_{Hedged}
 $$
 
-- Out target would be to figure out correct $\beta$ term to make $R_{t}$ stationary via ADF method. It can be found from hedge_ratio in code after linear regression fitting of R_{Target} and R_{Hedged}
+- Out target would be to figure out correct $\beta$ term to make $R_{t}$ stationary via ADF method. It can be found from hedge_ratio in code after linear regression fitting of $R_{Target}$ and $R_{Hedged}$
+  
 ```python
 hedge_model <- lm(log(R_{Target}) ~ log(R_{Hedged})
 summary(hedge_model)
 ```python
+
 - The co-integration can be interprated using p-value, which should be less than .05. Here residual_hedge is $R_{t}$
+
 ```python
 adf_residuals <- ur.df(residuals_hedge, type = "none", selectlags = "AIC")
 summary(adf_residuals)
