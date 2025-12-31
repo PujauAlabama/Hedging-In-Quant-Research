@@ -42,7 +42,8 @@ $$
 - In above equation $h_{0}$ is an constant and $\epsilon^{\prime}$ is an error term.
 - This kind of hedging ratio would be varying with time as the dependent variables are time dependent, hence the time -independent would follow for a very short period of time in real life.
 - The dependent variables are chosen from stock data in the code randomly, and usually chosen observing the correlation (preferablly negative correlation between stocks) for combined trading in XS stategy building.
-  
+  ### Hedging Using Minimum Variance Portfolio
+  ### Hedging Using PCA Analysis
 ## Time-dependent Hedging
 - For time varying process variance formula would be calculated with differnet time stamps(t), where-
   
@@ -50,7 +51,7 @@ $$
 \vec{h_{t}}_{optimal}= Var(R^{\prime}_{t})^{-1}Cov(R_{1_{t}},R^{\prime}_{t})
 $$
 ### Hedging Using GARCH model
--GARCH(p,q) can expresses as a stochastic process obeying following:
+- GARCH(p,q) can expresses as a stochastic process obeying following:
   
 $$
 y_{t}= \mu_{t} + \epsilon_{t} 
@@ -87,4 +88,16 @@ distribution.model = "norm"
 multispec <- multispec(replicate(ncol(log_returns), ugarch_spec))
 dcc_spec <- dccspec(uspec = multispec, dccOrder = c(1, 1), distribution = "mvnorm")  # Multivariate normal distribution
 ```
+### Hedging Using Augmented Dicky Fuller Test (ADF)
+- It uses the 
+- This method uses co-integration (i.e. long term time invariant correlation of two time series data) method between two stocks, which is important for pair trading scenarios.
+- We can consider one target stock as $R_{Target}$ and hedged return as $R_{Hedged}$ and a residual term R
+$$
+R = R_{Target} -  \beta R_{Hedged}
 
+$$
+where $\beta$ is 
+### Hedging Using The Johansen test (Co-integration analysis)
+-  Johansen test uses this cointegration method to figure out among a set of stocks, which ones among these combinedly gives stationary return for a long period of time. Though the stock time series data might be non-stationary individually, but thier combined portfolio would stay stationary. So while hedging that combination portfolio is considered which gives positive return throughout.
+- 
+  
