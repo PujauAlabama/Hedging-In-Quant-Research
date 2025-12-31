@@ -6,7 +6,7 @@
 - It's a strategy to choose weights in Portfolio selection in such a way that it mitigates risk optimally using the correlation between stocks.
 - It can be applied only when two (or more) stocks are correlated and one stock performs good compared to the other, then we should long the stock performing good and short the other one. In which ratio it should be done that information could be obtained from portlio weights.
 - The return for a portfolio can be expressed as follows
-
+  
 $$
 R= \beta_{0} + \sum_{i=1}^{n} \beta_{i}R_{i} + \epsilon
 $$
@@ -90,14 +90,15 @@ dcc_spec <- dccspec(uspec = multispec, dccOrder = c(1, 1), distribution = "mvnor
 ```
 ### Hedging Using Augmented Dicky Fuller Test (ADF)
 - Let us consider a stochastic process with
+  
 $$
  y_{t}= \alpha + \beta t `{{ (\gamma + 1) }}`
 $$
 - This method uses co-integration (i.e. long term time invariant correlation of two time series data) method between two stocks, which is important for pair trading scenarios.
 - We can consider one target stock as $R_{Target}$ and hedged return as $R_{Hedged}$ and a residual term R
+  
 $$
 R = R_{Target} -  \beta R_{Hedged}
-
 $$
 where $\beta$ is 
 ### Hedging Using The Johansen test (Co-integration analysis)
