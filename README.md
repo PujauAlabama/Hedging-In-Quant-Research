@@ -92,7 +92,7 @@ dcc_spec <- dccspec(uspec = multispec, dccOrder = c(1, 1), distribution = "mvnor
 - Let us consider a stochastic process with
   
 $$
- y_{t}= \alpha + \beta t `{{ (\gamma + 1) }}`
+y_{t}= \alpha + \beta t `{{ (\gamma + 1) }}`
 $$
 
 - This method uses co-integration (i.e. long term time invariant correlation of two time series data) method between two stocks, which is important for pair trading scenarios.
