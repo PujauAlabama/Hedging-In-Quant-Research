@@ -126,7 +126,7 @@ summary(adf_residuals)
 ```
    
 ### Hedging Using The Johansen test 
--  Johansen test uses this cointegration method to figure out among a set of stocks, which ones among these combinedly gives stationary return for a long period of time. Though the stock time series data might be non-stationary individually, but thier combined portfolio would stay stationary. So while hedging that combination portfolio is considered which gives positive return throughout. It's analogous to the ADF method, but it is used for multivariate portfolio hedging.
+-  Johansen test uses this cointegration method to figure out among a set of stocks, which ones among these combinedly gives stationary return for a long period of time. Though the stock time series data might be non-stationary individually, but thier combined portfolio would stay stationary. So while hedging that combination portfolio is considered which gives positive return throughout. 
 -  If we consider n number of stocks ($R_{i_{t}}$), then the combined portfolio return can be expressed as
    
 $$
@@ -134,11 +134,11 @@ R_{t} =  \sum_{i=1}^{n} \beta_{i} R_{i_{t}}
 $$  
 
  - Here, $\beta_{i}$ 's are the hedge ratios, with $\beta_{1}=1$
- - We can define a n dimentional vector for this return $\vec{R_{t}} = [R_{1_{t}},R_{2_{t}},...,R_{n_{t}}]$. The test uses Vector Error Correction Model (VECM). If we apply first order difference to the time series vector $R_{t}$, this gives
+ - We can define a n dimentional vector for this return $\vec{R_{t}} = [R_{1_{t}},R_{2_{t}},...,R_{n_{t}}]$.  If we apply first order difference to the time series vector $R_{t}$, this gives
 
  $$
- \Delta{R_{t}} = R_{t} - R_{t-1} = \Pi R_{t-1} + \sum_{{i=2}}^{n} \gamma R_{t-i} + \epsilon_{t}
+ \Delta{R_{t}} = R_{t} - R_{t-1} = \Pi R_{t-1} + \sum_{{i=2}}^{n} \gamma_{i} R_{t-i} + \epsilon_{t}
  $$
 
- -
+ - Johansen test uses Vector Error Correction Model (VECM) for eigenvalue decomposition of $\Pi$ and can figure out the rank $r$ of matrix $\Pi$, where $r=0,1,2,..,n-1$. This $r$ term determines the number of co-integrated time series stocks among all the stocks. $r=0$ implies no cointegration among the stocks, while $r=n-1$ implies all stocks would be cointegrated. It's analogous scenario of the ADF method, though it is used for multivariate portfolio hedging.
   
