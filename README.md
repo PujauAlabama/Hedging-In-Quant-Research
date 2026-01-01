@@ -125,7 +125,20 @@ adf_residuals <- ur.df(residuals_hedge, type = "none", selectlags = "AIC")
 summary(adf_residuals)
 ```
    
-### Hedging Using The Johansen test (Co-integration analysis)
--  Johansen test uses this cointegration method to figure out among a set of stocks, which ones among these combinedly gives stationary return for a long period of time. Though the stock time series data might be non-stationary individually, but thier combined portfolio would stay stationary. So while hedging that combination portfolio is considered which gives positive return throughout.
-- 
+### Hedging Using The Johansen test 
+-  Johansen test uses this cointegration method to figure out among a set of stocks, which ones among these combinedly gives stationary return for a long period of time. Though the stock time series data might be non-stationary individually, but thier combined portfolio would stay stationary. So while hedging that combination portfolio is considered which gives positive return throughout. It's analogous to the ADF method, but it is used for multivariate portfolio hedging.
+-  If we consider n number of stocks ($R_{i_{t}}$), then the combined portfolio return can be expressed as
+   
+$$
+R_{t} =  \sum_{i=1}^{n} \beta_{i} R_{i_{t}}
+$$  
+
+ - Here, $\beta_{i}$'s are the hedge ratios, with $\beta_{1}=1$
+ - We can define a n dimentional vector for this return $ \vec{R_{t}} = [R_{1_{t}}, R_{2_{t}}, ..., R_{n_{t}}] $. The test uses Vector Error Correction Model (VECM). If we apply first order difference to the time series vector $R_{t}$, this gives
+
+ $$
+ \Del{R_{t}} = R_{t} - R_{t-1} = \Pi R_{t-1} + \sum_{\gamma_{i=2}}^{n}R_{t-i} + \epsilon_{t}
+ $$
+
+ -
   
