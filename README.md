@@ -141,7 +141,7 @@ $$
  \Delta{R_{t}} = R_{t} - R_{t-1} = \Pi R_{t-1} + \sum_{{i=2}}^{n} \gamma_{i} R_{t-i} + \epsilon_{t}
  $$
 
- - Johansen test uses Vector Error Correction Model (VECM) for eigenvalue decomposition of $\Pi$ and can figure out the rank $r$ of matrix $\Pi$, where $r=0,1,2,..,n-1$. This $r$ term determines the number of co-integrated time series stocks among all the stocks. $r=0$ implies no cointegration among the stocks, while $r=n-1$ implies all stocks would be cointegrated. It's analogous scenario of the ADF method, though it is used for multivariate portfolio hedging.
+ - Johansen test uses Vector Error Correction Model (VECM) for eigenvalue decomposition of con-integration matrix $\Pi$ and can figure out the rank $r$ of matrix $\Pi$, where $r=0,1,2,..,n-1$. This $r$ term determines the number of co-integrated time series stocks among all the stocks. $r=0$ implies no cointegration among the stocks, while $r=n-1$ implies all stocks would be cointegrated. It's analogous scenario of the ADF method, though it is used for multivariate portfolio hedging.
    
 ```python
 
