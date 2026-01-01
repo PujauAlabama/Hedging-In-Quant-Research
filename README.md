@@ -155,14 +155,14 @@ johansen_test <- ca.jo(log_prices, type = "trace", ecdet = "const", K = 2, spec=
 
 
 ### Hedging Using Box-Tiao Cannonical Decomposition
--This method uses Vector Auto Regression(VAR) quite similar to the Johansen test, which considers same stock vector $\vec{R_{t}}$ as above. 
+-This method uses Vector Auto Regression(VAR) quite similar to the Johansen test, which considers same stock vector $\vec{R_{t}}$ as above. Though both Johansen test and Box_Tiao method is used for multivariate stock hedging, Box_Tiao method is a bit advanced. That is because, Johansen test by default considers the trend pattern to be same for all its stocks. While Box_Tiao method removes this assumptions, rather it decomposes the $R_{t}$ into parts, where in one part consists the component of trend part shared by all stocks , which takes into account time variance of overall mean and other part consists the local dynamics, which deals with volatility variation. Hence, Box_Tiao method can be used more extensively.
 -Box-Tiao method decomposes $R_{t}$ into two parts.
 
 $$
 R_{t} = S_{t} + U_{t}
 $$
 
-- Here, $S_{t}$ is stochastic trend part shared by all the stocks, which is non-stationary . While $U_{t}$ implies the stationary component.
+- Here, $S_{t}$ is stochastic trend part , which is non-stationary . While $U_{t}$ implies the stationary component.
 - Once the hedge ratios and appropriate weights $\vec{w} = w_{1} + w_{2} + ... + w_{n}$ are determined using Johansen test from above, we can construct a hedged portfolio and can analyze the long-term variably using
 
 $$
