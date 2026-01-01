@@ -130,10 +130,11 @@ summary(adf_residuals)
 -  If we consider n number of stocks ($R_{i_{t}}$), then the combined portfolio return can be expressed as
    
 $$
-R_{t} =  \sum_{i=1}^{n} \beta_{i} R_{i_{t}}
+R_{t} =  \sum_{i=1}^{n} \alpha_{i} R_{i_{t}}
 $$  
 
- - Here, $\beta_{i}$ 's are the hedge ratios, with $\beta_{1}=1$
+- We can implement hedging using $R_{1}$ as target, with a residual term $Rs_{t} = R_{1} -  \sum_{i=2}^{n} \beta_{i} R_{i_{t}} $, where  $\beta_{i}$ 's are the hedge ratios, that would make $Rs_{t}$ stationary. Our job would be ultimately to figure out these $\beta$'s.
+
  - We can define a n dimentional vector for this return $\vec{R_{t}} = [R_{1_{t}},R_{2_{t}},...,R_{n_{t}}]$.  If we apply first order difference to the time series vector $R_{t}$, this gives
 
  $$
@@ -150,4 +151,4 @@ johansen_test <- ca.jo(log_prices, type = "trace", ecdet = "none", K = 2, spec="
 #or if trend present , that would appear as constant term
 johansen_test <- ca.jo(log_prices, type = "trace", ecdet = "const", K = 2, spec="longrun")
 ```
-  
+- Here, log_prices would be the log returns of n stocks, ecdet would take value none(when trend term not included) or const(when trend included, ommitted in equation), $K=2$ implies 2 lag terms. The $type="trace"$ parameter implies trace test statistics method is implied. Alternative we can choose $type="eigen"$ for Maximum Eigenvalue statistics to figure out $\beta$'s. 
