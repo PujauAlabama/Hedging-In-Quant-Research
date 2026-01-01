@@ -135,7 +135,7 @@ $$
 
 - We can implement hedging using $R_{1}$ as target, with a residual term $Rs_{t} = R_{1} -  \sum_{i=2}^{n} \beta_{i} R_{i_{t}} $, where  $\beta_{i}$ 's are the hedge ratios, that would make $Rs_{t}$ stationary. Our job would be ultimately to figure out these $\beta$'s.
 
- - We can define a n dimentional vector for this return $\vec{R_{t}} = [R_{1_{t}},R_{2_{t}},...,R_{n_{t}}]$.  If we apply first order difference to the time series vector $R_{t}$, this gives
+ - We can define a n dimentional vector for this return $\vec{R_{t}} = [R_{1_{t}},R_{2_{t}},...,R_{n_{t}}]^{T}$.  If we apply first order difference to the time series vector $R_{t}$, this gives
 
  $$
  \Delta{R_{t}} = R_{t} - R_{t-1} = \Pi R_{t-1} + \sum_{{i=2}}^{n} \gamma_{i} R_{t-i} + \epsilon_{t}
@@ -151,4 +151,26 @@ johansen_test <- ca.jo(log_prices, type = "trace", ecdet = "none", K = 2, spec="
 #or if trend present , that would appear as constant term
 johansen_test <- ca.jo(log_prices, type = "trace", ecdet = "const", K = 2, spec="longrun")
 ```
-- Here, log_prices would be the log returns of n stocks, $ecdet = "none"$ (when trend term not included) or $ecdet = "const"$ (when trend included, ommitted in equation), $K=2$ implies 2 lag terms. The $type="trace"$ parameter implies trace test statistics method is implied. Alternative we can choose $type="eigen"$ for Maximum Eigenvalue statistics to figure out $\beta$'s. 
+- Here, log_prices would be the log returns of n stocks, $ecdet = "none"$ (when trend term not included) or $ecdet = "const"$ (when trend included, ommitted in equation), $K=2$ implies 2 lag terms. The $type="trace"$ parameter implies trace test statistics method is implied. Alternative we can choose $type="eigen"$ for Maximum Eigenvalue statistics to figure out $\beta$'s.
+
+
+### Hedging Using Box-Tiao Cannonical Decomposition
+-This method uses Vector Auto Regression(VAR) quite similar to the Johansen test, which considers same stock vector $\vec{R_{t}}$ as above. 
+-Box-Tiao method decomposes $R_{t}$ into two parts.
+
+$$
+R_{t} = S_{t} + U_{t}
+$$
+
+- Here, $S_{t}$ is stochastic trend part shared by all the stocks, which is non-stationary . While $U_{t}$ implies the stationary component.
+- Once the hedge ratios and appropriate weights $\vec{w} = w_{1} + w_{2} + ... + w_{n}$ are determined using Johansen test from above, we can construct a hedged portfolio and can analyze the long-term variably using
+
+$$
+R_{t}^{LT} = \vec{w}^{T} S_{t}
+$$
+
+and the can study the short-term equilibrium (in mean-reversion method ) dynamics using 
+
+$$
+R_{t}^{ST} = \vec{w}^{T} U_{t}
+$$
