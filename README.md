@@ -126,7 +126,7 @@ summary(adf_residuals)
 ```
    
 ### Hedging Using The Johansen test 
--  Johansen test uses this cointegration method to figure out among a set of stocks, which ones among these combinedly gives stationary return for a long period of time. Though the stock time series data might be non-stationary individually, but thier combined portfolio would stay stationary. So while hedging that combination portfolio is considered which gives positive return throughout. 
+-  Johansen test uses this cointegration method to figure out among a set of stocks, which ones among these combinedly gives stationary return for a long period of time. Though the stock time series data might be non-stationary individually, but thier combined portfolio would stay stationary. So while hedging that combination portfolio is considered which gives positive return throughout. See [documentation](https://faculty.washington.edu/ezivot/econ584/notes/cointegrationslides2.pdf) for more info.
 -  If we consider n number of stocks ($R_{i_{t}}$), then the combined portfolio return can be expressed as
    
 $$
