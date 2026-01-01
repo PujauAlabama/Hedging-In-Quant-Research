@@ -151,4 +151,4 @@ johansen_test <- ca.jo(log_prices, type = "trace", ecdet = "none", K = 2, spec="
 #or if trend present , that would appear as constant term
 johansen_test <- ca.jo(log_prices, type = "trace", ecdet = "const", K = 2, spec="longrun")
 ```
-- Here, log_prices would be the log returns of n stocks, ecdet would take value none(when trend term not included) or const(when trend included, ommitted in equation), $K=2$ implies 2 lag terms. The $type="trace"$ parameter implies trace test statistics method is implied. Alternative we can choose $type="eigen"$ for Maximum Eigenvalue statistics to figure out $\beta$'s. 
+- Here, log_prices would be the log returns of n stocks, $ecdet = "none"$ (when trend term not included) or $ecdet = "const"$ (when trend included, ommitted in equation), $K=2$ implies 2 lag terms. The $type="trace"$ parameter implies trace test statistics method is implied. Alternative we can choose $type="eigen"$ for Maximum Eigenvalue statistics to figure out $\beta$'s. 
