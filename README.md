@@ -141,4 +141,13 @@ $$
  $$
 
  - Johansen test uses Vector Error Correction Model (VECM) for eigenvalue decomposition of $\Pi$ and can figure out the rank $r$ of matrix $\Pi$, where $r=0,1,2,..,n-1$. This $r$ term determines the number of co-integrated time series stocks among all the stocks. $r=0$ implies no cointegration among the stocks, while $r=n-1$ implies all stocks would be cointegrated. It's analogous scenario of the ADF method, though it is used for multivariate portfolio hedging.
+   
+```python
+
+# Perform Johansen test
+#If trend term absent
+johansen_test <- ca.jo(log_prices, type = "trace", ecdet = "none", K = 2, spec="longrun")
+#or if trend present , that would appear as constant term
+johansen_test <- ca.jo(log_prices, type = "trace", ecdet = "const", K = 2, spec="longrun")
+```
   
