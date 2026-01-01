@@ -137,7 +137,7 @@ $$
  - We can define a n dimentional vector for this return $\vec{R_{t}} = [R_{1_{t}},R_{2_{t}},...,R_{n_{t}}]$. The test uses Vector Error Correction Model (VECM). If we apply first order difference to the time series vector $R_{t}$, this gives
 
  $$
- \Del{R_{t}} = R_{t} - R_{t-1} = \Pi R_{t-1} + \sum_{\gamma_{i=2}}^{n}R_{t-i} + \epsilon_{t}
+ \Delta{R_{t}} = R_{t} - R_{t-1} = \Pi R_{t-1} + \sum_{{i=2}}^{n} \gamma R_{t-i} + \epsilon_{t}
  $$
 
  -
